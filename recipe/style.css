@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Young+Serif:regular);
+@import url(https://fonts.googleapis.com/css?family=Outfit:100,200,300,regular,500,600,700,800,900);
+:root {
+  /* Colors */
+  --primary_Nutmeg: hsl(14, 45%, 36%);
+  --primary_Dark_Raspberry: hsl(332, 51%, 32%);
+  --neutral_White: hsl(0, 0%, 100%);
+  --neutral_Rose_White: hsl(330, 100%, 98%);
+  --neutral-Eggshell: hsl(30, 54%, 90%);
+  --neutral_Light_Grey: hsl(30, 18%, 87%);
+  --neutral_Wedge_Brown: hsl(30, 10%, 34%);
+  --neutral_Dark_Charcoal: hsl(24, 5%, 18%);
+  --fontSize: 16px;
+  --YoungSerif: "Young Serif", sans-serif;
+  --YoungWight: 400;
+  --Outfit: "Outfit", sans-serif;
+  --light: 400;
+  --medium: 600;
+  --light_dark: 700;
+  --border_radius: 0.8rem;
+}
+/* CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size-adjust: none;
+  -moz-font-size-adjust: none;
+  -webkit-font-size-adjust: none;
+}
+body {
+  font-size: var(--fontSize);
+  font-family: var(--Outfit);
+  background-color: var(--neutral_White);
+}
