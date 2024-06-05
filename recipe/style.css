@@ -18,6 +18,22 @@
   --medium: 600;
   --light_dark: 700;
   --border_radius: 0.8rem;
+  --padding_xl: 2rem;
+  --padding_lg: 1.6rem;
+  --padding_md: 1.2rem;
+  --padding_sm: 0.8rem;
+  --padding_xs: 0.4rem;
+  --br-sm: 0.5rem;
+  --br-md: 1rem;
+  --br-lg: 1.5rem;
+  --br-xl: 2rem;
+  --br-xxl: 2.5rem;
+  --boxShadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  --fs_xs: 0.8rem;
+  --fs_sm: 1rem;
+  --fs_md: 1.2rem;
+  --fs_lg: 1.6rem;
+  --fs_xl: 2rem;
 }
 /* CSS Reset */
 *,
@@ -35,5 +51,132 @@ html {
 body {
   font-size: var(--fontSize);
   font-family: var(--Outfit);
+  background-color: var(--neutral-Eggshell);
+  display: grid;
+  place-content: center;
+  margin-block: 5rem;
+  letter-spacing: 0.5px;
+  color: var(--neutral_Wedge_Brown);
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--br-sm);
+  box-shadow: var(--boxShadow);
+}
+
+ul li,
+ol li {
+  padding-block: var(--padding_xs);
+  padding-left: var(--padding_md);
+}
+li :not(:last-child),
+li :not(:last-child) {
+  padding-block: 0;
+}
+li::marker {
+  color: var(--primary_Nutmeg);
+  font-weight: var(--light_dark);
+}
+h1,
+h2 {
+  margin-block: var(--padding_sm);
+  font-family: var(--YoungSerif);
+  font-weight: var(--YoungWight);
+  color: var(--primary_Nutmeg);
+}
+strong {
+  color: var(--neutral_Dark_Charcoal);
+}
+
+.container {
+  width: 700px;
   background-color: var(--neutral_White);
+  padding: var(--padding_xl);
+  border-radius: var(--br-md);
+}
+
+header {
+  margin-bottom: var(--padding_xl);
+}
+header h1 {
+  font-size: var(--fs_xl);
+  color: var(--neutral_Dark_Charcoal);
+}
+
+.description {
+  font-size: var(--fs_sm);
+  font-weight: var(--light);
+  color: var(--neutral_Wedge_Brown);
+}
+ul,
+ol {
+  padding-inline: var(--padding_xl);
+  margin-block: var(--padding_lg);
+}
+
+.time {
+  background-color: var(--neutral_Rose_White);
+  padding-block: var(--padding_md);
+  padding-inline: var(--padding_xl);
+  width: 100%;
+  margin-block: var(--padding_lg);
+  border-radius: var(--br-sm);
+}
+.time h2 {
+  font-family: var(--Outfit);
+  font-size: var(--fs_md);
+  font-weight: var(--light_dark);
+  color: var(--primary_Dark_Raspberry);
+}
+
+.nutrition table {
+  width: 100%;
+}
+table tr {
+  display: flex;
+  padding-block: var(--padding_sm);
+  border-bottom: 1px solid var(--neutral_Light_Grey);
+  justify-content: start;
+}
+
+table tr td,
+table tr th {
+  width: 50%;
+  display: flex;
+}
+
+table tr td {
+  color: var(--primary_Nutmeg);
+  font-weight: var(--light_dark);
+}
+
+hr {
+  border: 0;
+  border-bottom: 2px solid var(--neutral_Light_Grey);
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    margin: 0;
+  }
+  .container {
+    width: 100%;
+    border-radius: 0;
+  }
+  figure {
+    margin: -1.6rem;
+    margin-bottom: var(--padding_lg);
+  }
+  img {
+    width: 100%;
+    border-radius: 0;
+  }
+  .time {
+    padding: var(--padding_sm);
+  }
+  ul {
+    margin-bottom: var(--padding_sm);
+  }
 }
