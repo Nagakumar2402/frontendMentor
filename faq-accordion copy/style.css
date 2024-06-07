@@ -94,17 +94,14 @@ main .card h1 svg {
   cursor: pointer;
 }
 
-.accordion-button strong {
-}
-
 .accordion-button:hover {
   color: #ad28eb;
 }
+
 .accordion-button .icon {
-  background-color: red;
   margin-left: 1rem;
-  width: 4px;
-  height: 4px;
+  width: 24px;
+  height: 24px;
 }
 
 .accordion-content {

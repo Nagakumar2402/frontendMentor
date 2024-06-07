@@ -15,7 +15,7 @@ const FAQs = [
     id: 3,
     question: "Can I use Frontend Mentor projects in my portfolio?",
     answer:
-      " Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!",
+      "Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!",
   },
   {
     id: 4,
@@ -26,6 +26,7 @@ const FAQs = [
 ];
 
 const plus = `<svg
+    class="icon"
     xmlns="http://www.w3.org/2000/svg"
     width="30"
     height="31"
@@ -38,7 +39,8 @@ const plus = `<svg
     />
   </svg>`;
 
-const minus = ` <svg
+const minus = `<svg
+    class="icon"
     xmlns="http://www.w3.org/2000/svg"
     width="30"
     height="31"
@@ -52,18 +54,31 @@ const minus = ` <svg
   </svg>`;
 
 document.addEventListener("DOMContentLoaded", () => {
-  const accordionItems = document.querySelectorAll(".accordion-item");
-  accordionItems.forEach((item) => {
-    const button = item.querySelector(".accordion-button");
-    const content = item.querySelector(".accordion-content");
-    const icon = item.querySelector(".icon");
+  const faqContainer = document.getElementById("faq-container");
+
+  FAQs.forEach((faq) => {
+    const faqItem = document.createElement("div");
+    faqItem.classList.add("accordion-item");
+
+    const button = document.createElement("p");
+    button.classList.add("accordion-button");
+    button.innerHTML = `<strong>${faq.question}</strong>${plus}`;
+
+    const content = document.createElement("p");
+    content.classList.add("accordion-content");
+    content.textContent = faq.answer;
+
     button.addEventListener("click", () => {
       content.classList.toggle("active");
       if (content.classList.contains("active")) {
-        icon.innerHTML = minus;
+        button.innerHTML = `<strong>${faq.question}</strong>${minus}`;
       } else {
-        icon.innerHTML = plus;
+        button.innerHTML = `<strong>${faq.question}</strong>${plus}`;
       }
     });
+
+    faqItem.appendChild(button);
+    faqItem.appendChild(content);
+    faqContainer.appendChild(faqItem);
   });
 });
